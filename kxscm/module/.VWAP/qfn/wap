@@ -1,0 +1,1 @@
+{[time1;time2;symbols]m:getData[time1;time2;];(,/)(m each symbols)}

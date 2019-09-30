@@ -1,0 +1,4 @@
+{[time1;time2;symbol]
+    select currency:first sym, VWAP:sum (price*size)%(sum size) 
+    from trades 
+    where (date+time)>time1, (date+time)<time2,sym=symbol}
