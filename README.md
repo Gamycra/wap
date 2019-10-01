@@ -13,3 +13,5 @@ example usage:
 `t2:2018.07.04D09:35:35.243`
 
 `.VWAP.wap[t1;t2;list]`
+
+use `wap.sh` to open `q` in console and load `.VWAP.wap` function
