@@ -1,0 +1,17 @@
+feature getData.test
+    should properly select data from table within specified time and symbol
+        expect to return a table
+            symbol:`USDEUR;
+            t1:2018.07.02D09:31:16.500;
+            t2:2018.07.04D09:35:35.243;
+            (type .VWAP.getData[t1;t2;symbol]) ~ 98h
+        expect to return correct VWAP value
+            symbol:`USDEUR;
+            t1:2018.07.02D09:31:16.500;
+            t2:2018.07.04D09:35:35.243;
+            .VWAP.getData[t1;t2;symbol][0;`VWAP] ~ 49.625675008061258
+        expect zero when wrong dates are set
+            symbol:`USDEUR;
+            t1:2018.07.02D09:31:16.500;
+            t2:2017.07.04D09:35:35.243;
+            .VWAP.getData[t1;t2;symbol][0;`VWAP] ~ 0f

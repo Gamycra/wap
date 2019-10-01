@@ -1,0 +1,14 @@
+feature wap
+    should compute and display the VMAP for chosen currencies
+        expect the output to be a table
+            list:enlist `USDEUR;
+            t1:2018.07.02D09:31:16.500;
+            t2:2018.07.04D09:35:35.243;
+            (type .VWAP.wap[t1;t2;list]) ~ 98h  
+        expect the output to be size of the symbols list
+            list:`USDEUR`USDPLN`EURPLN`USDGBP`GBPPLN;
+            t1:2018.07.02D09:31:16.500;
+            t2:2018.07.04D09:35:35.243;
+            (count .VWAP.wap[t1;t2;list]) ~ (count list)
+        
+        
